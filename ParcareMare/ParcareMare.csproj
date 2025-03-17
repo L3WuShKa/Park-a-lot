@@ -61,6 +61,10 @@
       <Project>{c4ae282d-c96f-478e-8962-149704ff2c66}</Project>
       <Name>Masina</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Securitate\Securitate.csproj">
+      <Project>{4699c35a-8f2b-437d-874d-0006ffb032f8}</Project>
+      <Name>Securitate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tichet\Tichet.csproj">
       <Project>{55c363e9-d4b9-44f0-a0f8-42be6834f5f7}</Project>
       <Name>Tichet</Name>

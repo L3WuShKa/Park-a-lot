@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0846B740-AD0E-4DD4-95F4-93367AD6FE08}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Parking</RootNamespace>
-    <AssemblyName>Parking</AssemblyName>
+    <ProjectGuid>{75C945E1-390E-4614-AE52-09EBC562BE71}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Administrator</RootNamespace>
+    <AssemblyName>Administrator</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,36 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Admin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Administrator\Administrator.csproj">
-      <Project>{75c945e1-390e-4614-ae52-09ebc562be71}</Project>
-      <Name>Administrator</Name>
-    </ProjectReference>
-    <ProjectReference Include="LocParcare\LocParcare.csproj">
+    <ProjectReference Include="..\LocParcare\LocParcare.csproj">
       <Project>{e0a50569-1e14-448f-a2d9-b3a7e8eec930}</Project>
       <Name>LocParcare</Name>
     </ProjectReference>
-    <ProjectReference Include="Masina\Masina.csproj">
+    <ProjectReference Include="..\Masina\Masina.csproj">
       <Project>{c4ae282d-c96f-478e-8962-149704ff2c66}</Project>
       <Name>Masina</Name>
     </ProjectReference>
-    <ProjectReference Include="ParcareMare\ParcareMare.csproj">
+    <ProjectReference Include="..\ParcareMare\ParcareMare.csproj">
       <Project>{8f9370c3-9a17-400c-a09b-35395de7d509}</Project>
       <Name>ParcareMare</Name>
     </ProjectReference>
-    <ProjectReference Include="Securitate\Securitate.csproj">
-      <Project>{4699c35a-8f2b-437d-874d-0006ffb032f8}</Project>
-      <Name>Securitate</Name>
-    </ProjectReference>
-    <ProjectReference Include="Tichet\Tichet.csproj">
+    <ProjectReference Include="..\Tichet\Tichet.csproj">
       <Project>{55c363e9-d4b9-44f0-a0f8-42be6834f5f7}</Project>
       <Name>Tichet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Securitate\Securitate.csproj">
+      <Project>{4699c35a-8f2b-437d-874d-0006ffb032f8}</Project>
+      <Name>Securitate</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

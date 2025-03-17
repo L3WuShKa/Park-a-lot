@@ -1,13 +1,14 @@
 ﻿using System;
+using Securitate;
 
 namespace LocParcare
 {
-    public class loc
+    public class Loc
     {
         public int NumarLoc { get; set; }
         public bool Ocupat { get; private set; }
 
-        public loc(int numar)
+        public Loc(int numar)
         {
             NumarLoc = numar;
             Ocupat = false;
@@ -15,7 +16,16 @@ namespace LocParcare
 
         public void OcupaLoc()
         {
-            Ocupat = true;
+            if (!Ocupat)
+            {
+                Ocupat = true;
+                Security.Log($"Locul {NumarLoc} a fost ocupat.");
+            }
+            else
+            {
+                Console.WriteLine("Locul este deja ocupat.");
+                Security.Log($"Încercare de ocupare a locului deja ocupat {NumarLoc}.");
+            }
         }
 
         public void ElibereazaLoc()

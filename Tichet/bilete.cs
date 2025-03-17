@@ -4,12 +4,12 @@ using Masina;
 
 namespace Tichet
 {
-    public class bilete
+    public class Bilete
     {
-        public detalii_masina Masina { get; set; }
-        public loc Loc { get; set; }
+        public DetaliiMasina Masina { get; set; }
+        public Loc Loc { get; set; }
 
-        public bilete(detalii_masina masina, loc loc)
+        public Bilete(DetaliiMasina masina, Loc loc)
         {
             Masina = masina;
             Loc = loc;

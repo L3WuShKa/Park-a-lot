@@ -2,26 +2,27 @@
 using LocParcare;
 using Masina;
 using Tichet;
+using Securitate;
 
 namespace ParcareMare
 {
     public class toata_parcarea
     {
-        private loc[] locuri;
-        private detalii_masina[] masiniParcate;
+        private Loc[] locuri;
+        private DetaliiMasina[] masiniParcate;
 
         public toata_parcarea(int numarLocuri)
         {
-            locuri = new loc[numarLocuri];
-            masiniParcate = new detalii_masina[numarLocuri];
+            locuri = new Loc[numarLocuri];
+            masiniParcate = new DetaliiMasina[numarLocuri];
 
             for (int i = 0; i < numarLocuri; i++)
             {
-                locuri[i] = new loc(i + 1);
+                locuri[i] = new Loc(i + 1);
             }
         }
 
-        public bilete ParcheazaMasina(detalii_masina masina)
+        public Bilete ParcheazaMasina(DetaliiMasina masina)
         {
             for (int i = 0; i < locuri.Length; i++)
             {
@@ -29,11 +30,13 @@ namespace ParcareMare
                 {
                     locuri[i].OcupaLoc();
                     masiniParcate[i] = masina;
-                    return new bilete(masina, locuri[i]);
+                    Security.Log($"Masina {masina.NumarInmatriculare} a fost parcata pe locul {locuri[i].NumarLoc}.");
+                    return new Bilete(masina, locuri[i]);
                 }
             }
 
             Console.WriteLine("Nu sunt locuri disponibile.");
+            Security.Log("incercare de parcare esuata: nu sunt locuri disponibile.");
             return null;
         }
 
@@ -57,7 +60,7 @@ namespace ParcareMare
             }
         }
 
-        public detalii_masina GetMasina(string numarInmatriculare)
+        public DetaliiMasina GetMasina(string numarInmatriculare)
         {
             foreach (var masina in masiniParcate)
             {
@@ -83,7 +86,7 @@ namespace ParcareMare
 
             if (!existaMasini)
             {
-                Console.WriteLine("Nu sunt masini în parcare.");
+                Console.WriteLine("Nu sunt masini in parcare.");
             }
         }
     }

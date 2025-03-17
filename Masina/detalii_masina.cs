@@ -2,12 +2,12 @@
 
 namespace Masina
 {
-    public class detalii_masina
+    public class DetaliiMasina
     {
         public string NumarInmatriculare { get; set; }
         public string Proprietar { get; set; }
 
-        public detalii_masina(string numar, string proprietar)
+        public DetaliiMasina(string numar, string proprietar)
         {
             NumarInmatriculare = numar;
             Proprietar = proprietar;
